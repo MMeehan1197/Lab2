@@ -1,47 +1,42 @@
 package base;
 
 import java.awt.Image;
+import Enums.eCardSuit;
+import Enums.eCardValue;
 
-public class Card {
+public class Card implements Comparable{
 
-	private int suit;
-	private int value;
-	private Image image;
+	private eCardSuit eSuit;
+	private eCardValue eValue;
+	private int iNumber;
+	
+
+
+	public Card(eCardSuit eSuit, eCardValue eValue, int iNumber) {
+		super();
+		this.eSuit = eSuit;
+		this.eValue = eValue;
+		this.iNumber = iNumber;
+	}
+
+	public eCardSuit geteSuit() {
+		return eSuit;
+	}
+
+	public eCardValue geteValue() {
+		return eValue;
+	}
+
+	public int getiNumber() {
+		return iNumber;
+	}
+
 	
 	
-	public Card(int suit, int value){
-		this.suit = suit;
-		this.value = value;
+	@Override
+	public int compareTo(Object o) {
+		Card c = (Card) o;
+		return c.geteValue().compareTo(this.geteValue());
 	}
 
-
-	protected int getSuit() {
-		return suit;
-	}
-
-
-	protected void setSuit(int suit) {
-		this.suit = suit;
-	}
-
-
-	protected int getValue() {
-		return value;
-	}
-
-
-	protected void setValue(int value) {
-		this.value = value;
-	}
-
-
-	protected Image getImage() {
-		return image;
-	}
-
-
-	protected void setImage(Image image) {
-		this.image = image;
-	}
-	
 }

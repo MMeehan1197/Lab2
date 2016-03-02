@@ -5,7 +5,11 @@ public enum eCardSuit {
 	
 	private final int cardSuit;
 	
-	eCardSuit(int cardSuit){
+	private eCardSuit(int cardSuit){
 		this.cardSuit = cardSuit;
+	}
+
+	private int getCardSuit() {
+		return cardSuit;
 	}
 }
